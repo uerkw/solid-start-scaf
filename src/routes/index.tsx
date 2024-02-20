@@ -4,7 +4,7 @@ import "./index.css";
 export default function Home() {
   return (
     <main>
-      <h1>Hello world!</h1>
+      <h1 class="text-lg">Hello world!</h1>
       <Counter />
       <p>
         Visit{" "}
