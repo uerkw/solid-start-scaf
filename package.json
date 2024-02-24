@@ -11,7 +11,10 @@
   },
   "type": "module",
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.515.0",
+    "@aws-sdk/s3-request-presigner": "^3.521.0",
     "@solid-primitives/scheduled": "^1.4.2",
+    "@solid-primitives/upload": "^0.0.115",
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.12.4",
     "@solidjs/start": "^0.5.9",

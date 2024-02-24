@@ -4,6 +4,8 @@ import { Route, Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start";
 import { Suspense } from "solid-js";
 import GetFile from "./routes/r2/get-file";
+import "./index.css";
+
 
 export default function App() {
   return (
@@ -11,8 +13,11 @@ export default function App() {
       root={(props) => (
         <MetaProvider>
           <Title>SolidStart - with Vitest</Title>
-          <a href="/">Index</a>
-          <a href="/about">About</a>
+          <div>
+
+          <a class = "mr-3 font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/">Index</a>
+          <a class = "font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/about">About</a>
+          </div>
           <Route path="/r2/get-file" component={GetFile}></Route>
           <Suspense>{props.children}</Suspense>
         </MetaProvider>
