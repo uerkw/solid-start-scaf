@@ -1,5 +1,6 @@
 
-
+import Markdoc from "@markdoc/markdoc"
+import render from "solidjs-markdoc"
 
 
 export default function DocPage() {

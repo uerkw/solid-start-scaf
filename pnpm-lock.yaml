@@ -11,6 +11,9 @@ devDependencies:
   '@aws-sdk/s3-request-presigner':
     specifier: ^3.521.0
     version: 3.521.0
+  '@markdoc/markdoc':
+    specifier: ^0.4.0
+    version: 0.4.0
   '@solid-primitives/scheduled':
     specifier: ^1.4.2
     version: 1.4.2(solid-js@1.8.15)
