@@ -49,13 +49,13 @@ const SingleFileUpload: Component = () => {
   }
 
   const handleUpload = async (file: File, fileName: string) => {
-
+    // Add optional filename
     const presignformData = new FormData();
     presignformData.append("fileName", fileName);
     // Add the file name to the headers for the server
-    const presignHeaders=  {
-        'content-type': 'image/png',
-      };
+    // const presignHeaders=  {
+    //     'content-type': 'image/png',
+    //   };
 
     // Send the file to the server
     const response = await fetch("/api/r2/upload", {
@@ -70,9 +70,7 @@ const SingleFileUpload: Component = () => {
     // Generate a new formData to use with correct headers
     const uploadFormData = new FormData()
     uploadFormData.append('file', file);
-    const uploadHeaders = {
-      'content-type': 'image/png'
-    }
+
     await fetch(url, {
       method: "PUT",
       body: file,

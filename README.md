@@ -1,3 +1,14 @@
+# Basis and Background
+
+The goal of this project is to provide a lightly abstracted layer over a small set of data tools such as:
+
+- S3 Compatible Storage (Cloudflare R2 in this case)
+- Key-Value Store/Cache (Redis, or RaaS such as Upstash)
+- RDBMS, SQL Provider (such as SQLite or PostgreSQL)
+
+These key components together provide what is functionality a thin/light CMS system. This project ties together some basic primitives that should get you bootstrapped and up and running building a SolidJS application. Think of it like a foundation to build content off of. The primary purpose of this repository is to provide a quick start to using database level tools within the Solid ecosystem, so feel free to tear apart the examples to see how things work (it is encouraged!)
+
+
 # SolidStart
 
 Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
