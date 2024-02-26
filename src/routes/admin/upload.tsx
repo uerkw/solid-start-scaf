@@ -1,4 +1,5 @@
 import { Component, For, createSignal } from "solid-js";
+import { createStore } from "solid-js/store";
 import {
   UploadFile,
   createDropzone,
@@ -103,7 +104,11 @@ const SingleFileUpload: Component = () => {
           onClick={() => {
             selectFilesAsync(async ([{ source, name, size, file }]) => {
               // await doStuff(2);
+              // TODO: Run the database mutation to the backend from here
+              // TODO: Check authentication
               await handleUpload(file, name);
+              // TODO: Decouple upload logic to have a "Select" button to upload, and a "Upload" button to confirm uploading.
+              // TODO: Do we need a webhook to check when uploading is done and navigate the user again?
               console.log({ source, name, size, file });
             });
           }}

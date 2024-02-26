@@ -5,6 +5,7 @@ import { FileRoutes } from "@solidjs/start";
 import { Suspense } from "solid-js";
 import GetFile from "./routes/r2/get-file";
 import "./index.css";
+import Page from "./routes/admin/upload";
 
 
 export default function App() {
@@ -16,9 +17,10 @@ export default function App() {
           <div>
 
           <a class = "mr-3 font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/">Index</a>
-          <a class = "font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/about">About</a>
+          <a class = "mr-3 font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/about">About</a>
+          <a class = "mr-3 font-medium text-blue-600 dark:text-blue-500 hover:underline" href="/admin/upload">Upload</a>
           </div>
-          <Route path="/r2/get-file" component={GetFile}></Route>
+          {/* <Route path="/admin/upload" component={Page}></Route> */}
           <Suspense>{props.children}</Suspense>
         </MetaProvider>
       )}
