@@ -1,15 +1,19 @@
+import { clientOnly } from "@solidjs/start";
+import Testing from "../../docs/Testing.mdx";
 
-import Markdoc from "@markdoc/markdoc"
-import render from "solidjs-markdoc"
-
+const ClientOnlyRenderer = clientOnly(
+  () => import("~/components/MarkdownRenderer")
+);
 
 export default function DocPage() {
-    return (
-        <div class=  "content-center align-middle items-center container">
-            <div class="text-white bg-slate-600 min-w-[300px] w-[400px]">
-                <h1 class="text-white text-center">Documentation:</h1>
+  ///return <ClientOnlyRenderer/>
 
-            </div>
-        </div>
-    )
+  return (
+    <div class="container  text-white bg-red-500">
+    <Testing>
+      
+    </Testing>
+      {/* <ClientOnlyRenderer/> */}
+    </div>
+  );
 }
