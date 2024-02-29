@@ -1,5 +1,5 @@
 import {compile} from '@mdx-js/mdx'
-
+import {run } from '@mdx-js/mdx'
 
 async function CompileMarkdown(md: string){
 
@@ -18,6 +18,12 @@ Here is an example of some Markdown
  
  `;
 
+
+  const code = new Promise((resolve, reject) => {
+    CompileMarkdown(md)
+      .then(result => resolve(result))
+      .catch(error => reject(error));
+  });
 
   //   const renderedMarkdoc = render(content);
   console.log("Rendering Markdoc");

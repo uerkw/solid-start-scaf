@@ -41,15 +41,14 @@ interface IFileUpload {
 }
 
 const SingleFileUpload: Component = () => {
-  const { files, selectFiles } = createFileUploader();
   const { files: filesAsync, selectFiles: selectFilesAsync } =
     createFileUploader();
 
-  function createFileSignal({source, name, size, file}: IFileUpload) {
+  function createFileSignal({ source, name, size, file }: IFileUpload) {
     console.log("Did action");
   }
 
-  const handleUpload = async (file: File, fileName: string) => {
+  const handleR2Upload = async (file: File, fileName: string) => {
     // Add optional filename
     const presignformData = new FormData();
     presignformData.append("fileName", fileName);
@@ -62,17 +61,28 @@ const SingleFileUpload: Component = () => {
     const response = await fetch("/api/r2/upload", {
       method: "POST",
       // body: presignformData,
-      // headers: presignHeaders, 
+      // headers: presignHeaders,
     });
     // Await the return of the URL
     const { url } = await response.json();
-    console.log(chalk.yellow(`Logging Presigned URL: ${url} //`))
+    console.log(chalk.yellow(`Logging Presigned URL: ${url} //`));
 
-    // Generate a new formData to use with correct headers
-    const uploadFormData = new FormData()
-    uploadFormData.append('file', file);
+    // // Generate a new formData to use with correct headers
+    // const uploadFormData = new FormData()
+    // uploadFormData.append('file', file);
 
     await fetch(url, {
+      method: "PUT",
+      body: file,
+    });
+  };
+
+  const handleMinioUpload = async (file: File, fileName: string) => {
+    const response = await fetch("/api/minio/upload", {
+      method: "POST",
+    });
+    const { url } = await response.json();
+    const newResponse = await fetch(url, {
       method: "PUT",
       body: file,
     });
@@ -81,24 +91,7 @@ const SingleFileUpload: Component = () => {
   return (
     <div class="flex flex-col">
       <div class="flex flex-row items-center content-center gap-x-4">
-        <h5 class="text-center">Select a single file</h5>
-        <button
-          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-          onClick={() => {
-            selectFiles(([{ source, name, size, file }]) => {
-              // createFileSignal({source, name, size, file})
-              // handleUpload(file, name)
-              console.log({ source, name, size, file });
-            });
-          }}
-        >
-          Select
-        </button>
-        <For each={files()}>{(file) => <p>{file.name}</p>}</For>
-      </div>
-
-      <div class="flex flex-row items-center content-center gap-x-4">
-        <h5>Select a single file with async callback</h5>
+        <h5>Minio Upload: Async Callback</h5>
         <button
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           onClick={() => {
@@ -106,7 +99,28 @@ const SingleFileUpload: Component = () => {
               // await doStuff(2);
               // TODO: Run the database mutation to the backend from here
               // TODO: Check authentication
-              await handleUpload(file, name);
+              await handleMinioUpload(file, name);
+              // TODO: Decouple upload logic to have a "Select" button to upload, and a "Upload" button to confirm uploading.
+              // TODO: Do we need a webhook to check when uploading is done and navigate the user again?
+              console.log({ source, name, size, file });
+            });
+          }}
+        >
+          Select
+        </button>
+        <For each={filesAsync()}>{(file) => <p>{file.name}</p>}</For>
+      </div>
+
+      <div class="flex flex-row items-center content-center gap-x-4">
+        <h5>R2 Upload: Async Callback</h5>
+        <button
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          onClick={() => {
+            selectFilesAsync(async ([{ source, name, size, file }]) => {
+              // await doStuff(2);
+              // TODO: Run the database mutation to the backend from here
+              // TODO: Check authentication
+              await handleR2Upload(file, name);
               // TODO: Decouple upload logic to have a "Select" button to upload, and a "Upload" button to confirm uploading.
               // TODO: Do we need a webhook to check when uploading is done and navigate the user again?
               console.log({ source, name, size, file });
