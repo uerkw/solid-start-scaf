@@ -1,3 +1,7 @@
+# Current TODO:
+
+- Investigate Default value on column fix for filehashes, SQLite is having an aneursym about this currently.
+
 # Main functionality
 - When generating file in R2 for upload, also
   - Send out a Database creation event for the file with metadata

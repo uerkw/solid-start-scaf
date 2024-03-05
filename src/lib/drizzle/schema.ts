@@ -1,6 +1,8 @@
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
 import { nanoid } from 'nanoid';
 
+
+// TODO: SQLite does not support default columns automatically for migrations. Investigate fix or PostgreS drop in replacement.
 export const contentFile = sqliteTable('content_file', {
   id: text('id')
     .primaryKey()
