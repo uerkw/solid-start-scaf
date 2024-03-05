@@ -49,14 +49,13 @@ export const route = {
 export default function Home() {
   const contentFile = createAsyncStore<SelectContentFile[]>(() => getContentFiles(), {
     initialValue: [],
-    deferStream: true,
+    
   });
 
   return (
     <main>
       <h1 class="text-lg">Hello world!</h1>
       <Counter />
-      
       <form
         action={createContentFileAction}
         method="post"

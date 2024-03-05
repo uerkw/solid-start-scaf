@@ -5,7 +5,3 @@ import * as schema from './schema';
 
 export const sqlite = new Database('db.sqlite');
 export const db = drizzle(sqlite, { schema });
-
-migrate(db, {
-  migrationsFolder: './drizzle',
-});
