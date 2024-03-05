@@ -1,0 +1,1 @@
+ALTER TABLE content_file ADD `isMarkedDeleted` integer;

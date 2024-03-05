@@ -67,12 +67,18 @@ devDependencies:
   chalk:
     specifier: ^5.3.0
     version: 5.3.0
+  dotenv:
+    specifier: ^16.4.5
+    version: 16.4.5
   drizzle-kit:
     specifier: ^0.20.14
     version: 0.20.14
   jsdom:
     specifier: ^23.2.0
     version: 23.2.0
+  lucide-solid:
+    specifier: ^0.344.0
+    version: 0.344.0(solid-js@1.8.15)
   nanoid:
     specifier: ^5.0.6
     version: 5.0.6
@@ -94,6 +100,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
+  tsx:
+    specifier: ^4.7.1
+    version: 4.7.1
   typescript:
     specifier: ^5.3.3
     version: 5.3.3
@@ -5699,6 +5708,14 @@ packages:
       es5-ext: 0.10.64
     dev: true
 
+  /lucide-solid@0.344.0(solid-js@1.8.15):
+    resolution: {integrity: sha512-qPVT5XcB4cfyxy+fRoue7XbGnf47BbndB3nY4GXLnJ9/lkkGGdcg2l5Ao+VBNu4jz0jSggdAcYhlxXgOmxTVug==}
+    peerDependencies:
+      solid-js: ^1.4.7
+    dependencies:
+      solid-js: 1.8.15
+    dev: true
+
   /lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
@@ -8027,6 +8044,17 @@ packages:
 
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
+
+  /tsx@4.7.1:
+    resolution: {integrity: sha512-8d6VuibXHtlN5E3zFkgY8u4DX7Y3Z27zvvPKVmLon/D4AjuKzarkUBTLDBgj9iTQ0hg5xM7c/mYiRVM+HETf0g==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dependencies:
+      esbuild: 0.19.12
+      get-tsconfig: 4.7.2
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: true
 
   /tunnel-agent@0.6.0:

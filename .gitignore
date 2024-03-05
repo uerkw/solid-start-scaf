@@ -5,10 +5,14 @@ dist
 .vercel
 .netlify
 netlify
+.vinxi
 
 # Environment
 .env
 .env*.local
+
+# Local SQLite DB example
+db.sqlite
 
 # dependencies
 /node_modules
