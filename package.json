@@ -7,7 +7,9 @@
     "test": "vitest run",
     "test-watch": "vitest",
     "test-ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:migrate": "tsx src/lib/drizzle/migrate"
   },
   "type": "module",
   "devDependencies": {
