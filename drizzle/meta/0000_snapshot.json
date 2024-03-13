@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "bc00e345-8248-4770-a934-a152f2ccd7f6",
+  "id": "6aa6d4cc-29f8-4b8f-a540-8ca5bfc097cc",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "content_file": {
@@ -27,6 +27,14 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
+        },
+        "isMarkedDeleted": {
+          "name": "isMarkedDeleted",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": false
         }
       },
       "indexes": {

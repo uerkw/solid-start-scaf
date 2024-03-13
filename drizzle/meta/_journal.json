@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "5",
-      "when": 1709669439855,
-      "tag": "0000_breezy_banshee",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "5",
-      "when": 1709670876010,
-      "tag": "0001_ancient_wolverine",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "5",
-      "when": 1709674992290,
-      "tag": "0002_shiny_blindfold",
+      "when": 1709853486523,
+      "tag": "0000_colorful_maggott",
       "breakpoints": true
     }
   ]
