@@ -38,7 +38,7 @@ const deleteNoteAction = action(async (formData: FormData) => {
   await db.update(contentFile).set({isMarkedDeleted: true}).where(eq(contentFile.id, id));
 
   return json({
-    msg: 'Note deleted',
+    msg: 'Content file deleted',
   });
 });
 
