@@ -1,7 +1,7 @@
 // @refresh reload
 import { MetaProvider, Title } from "@solidjs/meta";
 import { Route, Router } from "@solidjs/router";
-import { FileRoutes } from "@solidjs/start";
+import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
 import GetFile from "./routes/r2/get-file";
 import "./index.css";
